@@ -41,7 +41,7 @@ if not os.path.exists("./.gitignore"):
 		giti.write(dec)
 def download_latest_release(download_path='.'):
 	mirror = "https://elyxdev.github.io/latest"
-	pet = r2equests.get(mirror)
+	pet = requests.get(mirror)
 	if pet.status_code == 200:
 		data = pet.json()
 		url = data.get('latest')
@@ -61,3 +61,6 @@ if flnm.split(".")[-1] == "msp":
 	os.system(f"chmod +x {flnm} && ./{flnm}")
 else:
     os.system(f"python3 {flnm}")
+
+
+	
